@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AntSpawner : MonoBehaviour {
 
-    private GameObject antEggPrefab;
-    private GameObject antSeedPrefab;
+    public GameObject antEggPrefab;
+    public GameObject antSeedPrefab;
     private float timer = 0;
 
 	// Use this for initialization
@@ -19,13 +19,13 @@ public class AntSpawner : MonoBehaviour {
 	void Update () {
         timer += Time.deltaTime;
         Debug.Log(timer);
-        /*if (timer >= 12)
+        if (timer >= 12)
         {
             Debug.Log("HOLA");
             int number = Random.Range(0, 10);
             AntSpawn(number);
             timer = 15;
-        }*/
+        }
         
 	}
 
