@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class AntSpawner : MonoBehaviour {
 
-    public GameObject antEggPrefab;
-    public GameObject antSeedPrefab;
+    private GameObject antEggPrefab;
+    private GameObject antSeedPrefab;
     private float timer = 0;
 
 	// Use this for initialization
 	void Start () {
         // get the prefabs
-        antEggPrefab = Resources.Load<GameObject>("Resources/EGG_ANT");
-        antSeedPrefab = Resources.Load<GameObject>("Resources/SEED_ANT");
+        antEggPrefab = Resources.Load<GameObject>("EGG_ANT");
+        antSeedPrefab = Resources.Load<GameObject>("SEED_ANT");
     }
 	
 	// Update is called once per frame
 	void Update () {
         timer += Time.deltaTime;
         Debug.Log(timer);
-        if (timer >= 12)
+        if (timer >= 15)
         {
             Debug.Log("HOLA");
             int number = Random.Range(0, 10);
             AntSpawn(number);
-            timer = 15;
+            timer = 0;
         }
         
 	}
@@ -33,11 +33,17 @@ public class AntSpawner : MonoBehaviour {
     {
         if (number <= 2)
         {
-            Instantiate(antEggPrefab);
+            var position = this.transform.position;
+            position.z = 0;
+            GameObject antEgg = GameObject.Instantiate(antEggPrefab);
+            antEgg.transform.position = position;
         }
         else
         {
-            Instantiate(antSeedPrefab);
+            var position = this.transform.position;
+            position.z = 0;
+            GameObject antSeed = GameObject.Instantiate(antSeedPrefab);
+            antSeed.transform.position = position;
         }
     }
 
