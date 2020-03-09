@@ -19,7 +19,7 @@ public class AntSpawner : MonoBehaviour {
 	void Update () {
         timer += Time.deltaTime;
         Debug.Log(timer);
-        if (timer >= 15)
+        if (timer >= 10)
         {
             Debug.Log("HOLA");
             int number = Random.Range(0, 10);
