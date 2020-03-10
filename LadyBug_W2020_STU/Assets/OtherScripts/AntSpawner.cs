@@ -18,7 +18,7 @@ public class AntSpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         timer += Time.deltaTime;
-        Debug.Log(timer);
+        //Debug.Log(timer);
         if (timer >= 15)
         {
             Debug.Log("HOLA");
